@@ -1,0 +1,4 @@
+<h1>Latests posts:</h1>
+<% @posts.each do |post| %>
+    <%= post.created_at %> Comments: (<%= post.comments_count %>)<a href="/posts/<%= post.id %>"><p><%= post.title %></p></a>
+<% end %>

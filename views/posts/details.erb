@@ -1,0 +1,14 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<form action="/posts/<%= @post.id %>/comments" method="post">
+  <div class="form-group">
+    <label>Оставить комментарий:</label>
+    <textarea name="comment[content]" type="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+<p>Комментарии:</p>
+<% @comments.each do |comment| %>
+<p><%= comment.created_at %></p>
+<p><%= comment.content %></p>
+<% end %>
